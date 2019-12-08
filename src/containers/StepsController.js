@@ -13,3 +13,5 @@ export class StepsController extends React.Component {
         );
     }
 }
+//swith для степа по каждому кейсу слайд
+
