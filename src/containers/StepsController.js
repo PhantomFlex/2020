@@ -7,7 +7,19 @@ import { Slide3 } from './../components/slides/Slide3';
 export class StepsController extends React.Component {
     constructor() {
         super();
+        this.state = {
+            data: {}
+        }
+
+        this.updateData = (field, value) => {
+            const { data } = this.state;
+
+            data[field] = value; 
+            this.setState({ data })
+        }
     }
+
+
 
     render() {
         const { step } = this.props;
@@ -30,9 +42,10 @@ export class StepsController extends React.Component {
                 Slide = () => <div>Empty</div>;
             }
         }
+        console.log(this.state.data); 
         return (
-            <div>
-                <Slide />
+            <div>    
+                <Slide dataCallback={this.updateData} data={this.state.data}/>
             </div>
         );
     }
