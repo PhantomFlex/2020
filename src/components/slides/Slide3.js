@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export function Slide3(props) {
-  let initialValue = ""; 
+   let initialValue = ""; 
   if (props.data.step3) {
     initialValue = props.data.step3; 
   }
@@ -15,7 +15,8 @@ export function Slide3(props) {
 
   return (
     <div>
-      <h1>fa</h1>
+      <h1>Размер,который Вы обычно носите:</h1>
+      <h2>Введите в любом удобном виде:</h2>
       <input onChange={onChange} value={value} />
     </div>
   )

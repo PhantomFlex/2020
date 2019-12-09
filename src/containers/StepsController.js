@@ -1,8 +1,11 @@
 import React from 'react';
 
+import { Slide0 } from './../components/slides/Slide0';
 import { Slide1 } from './../components/slides/Slide1';
 import { Slide2 } from './../components/slides/Slide2';
 import { Slide3 } from './../components/slides/Slide3';
+import { Slide4 } from './../components/slides/Slide4';
+
 
 export class StepsController extends React.Component {
     constructor() {
@@ -26,6 +29,10 @@ export class StepsController extends React.Component {
 
         let Slide;
         switch (step) {
+            case 0:{
+                Slide=Slide0;
+                break;
+            }
             case 1: {
                 Slide = Slide1;
                 break;
@@ -36,6 +43,10 @@ export class StepsController extends React.Component {
             }
             case 3: {
                 Slide = Slide3;
+                break;
+            }
+            case 4: {
+                Slide=Slide4;
                 break;
             }
             default: {

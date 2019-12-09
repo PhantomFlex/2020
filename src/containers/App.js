@@ -9,8 +9,8 @@ class App extends React.Component {
         super();
 
         this.state = {
-            step: 1,
-            maxSteps: 3,
+            step: 0,
+            maxSteps: 12,
             data: {}
         }
 
@@ -23,7 +23,7 @@ class App extends React.Component {
 
         this.prevStep = () => {
             const {step} = this.state; 
-            if (step > 1) {
+            if (step > 0) {
                 this.setState({ step: step - 1 })
             }
         }

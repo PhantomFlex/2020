@@ -8,8 +8,6 @@ export function Slide2() {
             <Select dat={options} />
             <Select dat={regions} />
             <h1>RazmerOfNogi</h1>
-
-            <button>Dalee</button>
         </div>
 
 
