@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { Slide1 } from './../components/slides/Slide1.js';
 import { Slide2 } from './../components/slides/Slide2.js';
-import { StepsController } from './StepsController';
+import StepsController from './StepsController';
 
 class App extends React.Component {
     constructor() {
@@ -15,14 +15,14 @@ class App extends React.Component {
         }
 
         this.nextStep = () => {
-            const {step, maxSteps} = this.state; 
+            const { step, maxSteps } = this.state;
             if (step < maxSteps) {
                 this.setState({ step: step + 1 })
             }
         }
 
         this.prevStep = () => {
-            const {step} = this.state; 
+            const { step } = this.state;
             if (step > 0) {
                 this.setState({ step: step - 1 })
             }

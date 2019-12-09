@@ -1,5 +1,6 @@
 import React from 'react';
-
+import { connect } from 'react-redux';
+import { saveValue } from './../redux/actions/input'; 
 import { Slide0 } from './../components/slides/Slide0';
 import { Slide1 } from './../components/slides/Slide1';
 import { Slide2 } from './../components/slides/Slide2';
@@ -7,7 +8,7 @@ import { Slide3 } from './../components/slides/Slide3';
 import { Slide4 } from './../components/slides/Slide4';
 
 
-export class StepsController extends React.Component {
+class StepsController extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -17,20 +18,17 @@ export class StepsController extends React.Component {
         this.updateData = (field, value) => {
             const { data } = this.state;
 
-            data[field] = value; 
+            data[field] = value;
             this.setState({ data })
         }
     }
-
-
-
+    
     render() {
-        const { step } = this.props;
-
+        const { step} = this.props;
         let Slide;
         switch (step) {
-            case 0:{
-                Slide=Slide0;
+            case 0: {
+                Slide = Slide0;
                 break;
             }
             case 1: {
@@ -46,20 +44,30 @@ export class StepsController extends React.Component {
                 break;
             }
             case 4: {
-                Slide=Slide4;
+                Slide = Slide4;
                 break;
             }
             default: {
                 Slide = () => <div>Empty</div>;
             }
         }
-        console.log(this.state.data); 
         return (
-            <div>    
-                <Slide dataCallback={this.updateData} data={this.state.data}/>
+            <div>
+                <button onClick={() => this.props.saveValue("test")}></button>
+                <Slide dataCallback={this.updateData} data={this.state.data} />
             </div>
         );
     }
 }
+
+const mapStateToProps = state => ({
+    value: state.inputReducer.value
+})
+
+const mapDispatchToProps = dispatch => ({
+    saveValue: value => dispatch(saveValue(value))
+})
+ 
+export default connect(mapStateToProps, mapDispatchToProps)(StepsController); 
 
 
