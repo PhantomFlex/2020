@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { saveValue } from './../../redux/actions/input';
 
 export function Slide3(props) {
-   let initialValue = ""; 
-  if (props.data.step3) {
-    initialValue = props.data.step3; 
-  }
-  
-  const [value, setValue] = useState(initialValue);
+  const inputValue = useSelector(state => state.inputReducer.value);
+  const dispatch = useDispatch();
   
   function onChange(e) {
-    setValue(e.target.value);
-    props.dataCallback("step3", e.target.value);
+    dispatch(saveValue(e.target.value))
   }
 
   return (
     <div>
       <h1>Размер,который Вы обычно носите:</h1>
       <h2>Введите в любом удобном виде:</h2>
-      <input onChange={onChange} value={value} />
+      <input onChange={onChange} value={inputValue} />
     </div>
   )
 }
