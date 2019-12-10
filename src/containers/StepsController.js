@@ -15,14 +15,29 @@ import { Slide10 } from '../components/slides/Slide10';
 import { Slide11 } from './../components/slides/Slide11';
 import { Slide12 } from './../components/slides/Slides12';
 
-
-
+import { Button } from './../components/Button'; 
 
 class StepsController extends React.Component {
     constructor() {
         super();
         this.state = {
-            data: {}
+            data: {}, 
+            step: 0,
+            maxSteps: 12,
+        }
+
+        this.nextStep = () => {
+            const { step, maxSteps } = this.state;
+            if (step < maxSteps) {
+                this.setState({ step: step + 1 })
+            }
+        }
+
+        this.prevStep = () => {
+            const { step } = this.state;
+            if (step > 0) {
+                this.setState({ step: step - 1 })
+            }
         }
 
         this.updateData = (field, value) => {
@@ -95,8 +110,11 @@ class StepsController extends React.Component {
         }
         return (
             <div>
-                <button onClick={() => this.props.saveValue("test")}></button>
                 <Slide dataCallback={this.updateData} data={this.state.data} />
+                <div class="button-container">
+                    <Button onClick={this.prevStep} isNext={false}>Назад</Button>
+                    <Button onClick={this.nextStep} isNext={true}>Далее</Button>
+                </div>
             </div>
         );
     }
