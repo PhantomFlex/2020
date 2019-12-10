@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export function Slide0(){
     return(
         <div>

@@ -5,4 +5,13 @@
   text-align: center;
   flex-direction: column;
   height: 100vh;
+  background: #1C1C1C;
+  color: #FFFFFF;
+}
+.logo{
+  position: absolute;
+width: 200px;
+height: 60.49px;
+left: 80px;
+top: 80px;
 }
