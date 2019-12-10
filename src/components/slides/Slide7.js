@@ -1,9 +1,9 @@
 import React from 'react';
 
-export function Slide5(){
+export function Slide7(){
     return(
         <div>
-            <h1>test5</h1>
+            <h1>test7</h1>
         </div>
     )
 }

@@ -32,6 +32,7 @@ class App extends React.Component {
     render() {
         return (
             <div className="App">
+                <img className='logo' src='./images/logo.png'/>
                 <StepsController step={this.state.step} dataCallback={(data) => this.setState({ data })} />
                 <div>
                     <button onClick={this.prevStep}>Назад</button>
@@ -43,10 +44,4 @@ class App extends React.Component {
 }
 export default App;
 
-/*<div>
-<h1>Блок-интро</h1>
-                <Slide2/>
 
-                    <button onClick={() => this.setState({step: this.state.step + 1})}>+</button>
-                    <button onClick={() => this.setState({step: this.state.step - 1})}>-</button>
-                </div> */
