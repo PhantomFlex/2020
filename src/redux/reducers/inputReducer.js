@@ -1,5 +1,4 @@
 import { SAVE_INPUT_VALUE, SAVE_DATA_BY_STEP } from './../actions/input';
-import { act } from 'react-dom/test-utils';
 
 const initialState = {
     value: "hello", 
