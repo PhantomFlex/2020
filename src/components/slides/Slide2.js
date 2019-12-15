@@ -9,9 +9,5 @@ export function Slide2() {
             <Select dat={options} />
             <Select dat={regions} />
         </div>
-
-
-
-
     )
 }

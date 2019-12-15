@@ -1,14 +1,13 @@
 @import url("//hello.myfonts.net/count/3ab0b3");
 @font-face {
   font-family: 'Acrom-Bold';
-  src: url('3AB0B3_0_0.eot');
-  src: url('3AB0B3_0_0.eot?#iefix') format('embedded-opentype'), url('3AB0B3_0_0.woff2') format('woff2'), url('3AB0B3_0_0.woff') format('woff'), url('3AB0B3_0_0.ttf') format('truetype');
+  src: url('../fonts/3AB0B3_0_0.eot');
+  src: url('../fonts/3AB0B3_0_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_0_0.woff2') format('woff2'), url('../fonts/3AB0B3_0_0.woff') format('woff'), url('../fonts/3AB0B3_0_0.ttf') format('truetype');
 }
-
 @font-face {
   font-family: 'Acrom-Regular';
-  src: url('3AB0B3_1_0.eot');
-  src: url('3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('3AB0B3_1_0.woff2') format('woff2'), url('3AB0B3_1_0.woff') format('woff'), url('3AB0B3_1_0.ttf') format('truetype');
+  src: url('../fonts/3AB0B3_1_0.eot');
+  src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
 }
 
 p, label, select, input {
