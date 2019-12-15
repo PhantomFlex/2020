@@ -13,7 +13,7 @@ export function Slide3(props) {
   return (
     <div>
       <h1>Размер,который Вы обычно носите:</h1>
-      <h2>Введите в любом удобном виде:</h2>
+      <p>Введите в любом удобном виде:</p>
       <input onChange={onChange} value={inputValue} />
     </div>
   )

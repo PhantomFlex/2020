@@ -54,6 +54,7 @@ h1, button {
 .next-button, .prev-button {
   margin: 5px;
   padding: 10px;
+  border: none;
 }
 
 .next-button {
