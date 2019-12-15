@@ -4,10 +4,10 @@ export function Slide2() {
     const options = [1, 2, 3, 4, 5];
     const regions = ['EU', 'UA'];
     return (
-        <div>
+        <div className="slide">
+            <h1>RazmerOfNogi</h1>
             <Select dat={options} />
             <Select dat={regions} />
-            <h1>RazmerOfNogi</h1>
         </div>
 
 
