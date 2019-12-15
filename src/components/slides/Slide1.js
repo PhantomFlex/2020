@@ -7,7 +7,7 @@ export class Slide1 extends React.Component {
     super();
 
     this.state = {
-      checkboxs: [{ label: "рулетка", checked: false }, { label: "рулетка", checked: false }, { label: "шпатель", checked: false }, { label: "винил", checked: false }]
+      checkboxs: [{ label: "Лист А4", checked: false }, { label: "Ручка или Карандаш", checked: false }, { label: "Мягкий метр или линейка", checked: false }, { label: "Два любых небольших предмета", checked: false },{ label: "Стелька из обуви,в которой Вам удобно(необязательно)", checked: false },{ label: "Я в носках, в которых буду ходить в обуви", checked: false }]
     }
   }
 

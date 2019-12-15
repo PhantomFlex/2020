@@ -8,6 +8,7 @@
   font-family: 'Acrom-Regular';
   src: url('../fonts/3AB0B3_1_0.eot');
   src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
+
 }
 
 p, label, select, input {
@@ -53,6 +54,7 @@ h1, button {
 .next-button, .prev-button {
   margin: 5px;
   padding: 10px;
+  border: none;
 }
 
 .next-button {
@@ -65,6 +67,11 @@ h1, button {
 .prev-button:focus {
   outline: 0
 }
+
+.prev-button:focus {
+  outline: 0
+}
+
 
 .next-button:focus {
   outline: 0
