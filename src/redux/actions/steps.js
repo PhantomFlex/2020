@@ -3,6 +3,7 @@ export const DECREASE_STEP_BY = 'DECREASE_STEP_BY';
 
 export const UPDATE_STEP_DATA = "UPDATE_STEP_DATA"; 
 export const ADD_STEP_DATA = "ADD_STEP_DATA";
+export const ADD_STEP_INITIAL_DATA = "ADD_STEP_INITIAL_DATA"; 
 
 export const increaseStep = (increaseBy) => {
     return {
@@ -19,10 +20,11 @@ export const decreaseStep = (decreaseBy) => {
 }
  
 
-export const addStepData = (stepNumber) => {
+export const addStepInitialData = (stepNumber, initialData) => {
     return {
         type: ADD_STEP_DATA, 
-        stepNumber
+        stepNumber, 
+        initialData
     }
 }
 

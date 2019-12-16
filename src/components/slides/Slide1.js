@@ -1,24 +1,36 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Checkbox } from './../Checkbox';
-import './../../css/Slaide1.css';
+import { useSelector, useDispatch } from 'react-redux';
+import { updateStepData, addStepInitialData } from './../../redux/actions/steps';
 
-export class Slide1 extends React.Component {
-  constructor() {
-    super();
+const checboxLabels = [
+  "Лист А4", "Ручка или Карандаш",
+  "Мягкий метр или линейка", "Два любых небольших предмета",
+  "Стелька из обуви,в которой Вам удобно (необязательно)",
+  "Я в носках, в которых буду ходить в обуви"
+];
 
-    this.state = {
-      checkboxs: [{ label: "Лист А4", checked: false }, { label: "Ручка или Карандаш", checked: false }, { label: "Мягкий метр или линейка", checked: false }, { label: "Два любых небольших предмета", checked: false },{ label: "Стелька из обуви,в которой Вам удобно(необязательно)", checked: false },{ label: "Я в носках, в которых буду ходить в обуви", checked: false }]
-    }
+export const Slide1 = (props) => {
+  const dispatch = useDispatch();
+  const stepData = useSelector(state => {
+    return state.steps.stepsData[1];
+  });
+
+  const checkBoxClicked = checkboxIndex => {
+    stepData.checboxValues[checkboxIndex] = !stepData.checboxValues[checkboxIndex];
+    dispatch(updateStepData(1, stepData));
   }
 
-  render() {
-    const { checkboxs } = this.state;
-    return (
-      <div>
-        {checkboxs.map((checkbox, index) => {
-          return <Checkbox label={checkbox.label} index={index} checked={checkbox.checked} />
-        })}
-      </div>
-    )
-  }
+  useEffect(() => {
+    dispatch(addStepInitialData(1, { checboxValues: [false, false, false, false, false, false] }))
+  }, [dispatch]);
+
+  return (
+    <div>
+      {checboxLabels.map((label, index) => {
+        const checked = stepData ? stepData.checboxValues[index] : false;
+        return <Checkbox label={label} key={index} checke={checked} index={index} checkBoxClickedCallBack={checkBoxClicked} />
+      })}
+    </div>
+  );
 }

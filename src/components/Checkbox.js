@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import './checkbox.css'; 
 
 export function Checkbox(props) {
   const [checked, setChecked] = useState(props.checked);
 
   const checkboxClicked = () => {
-    setChecked(!checked); 
+    props.checkBoxClickedCallBack(props.index); 
   }
 
   return (

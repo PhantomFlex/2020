@@ -4,11 +4,11 @@
   src: url('../fonts/3AB0B3_0_0.eot');
   src: url('../fonts/3AB0B3_0_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_0_0.woff2') format('woff2'), url('../fonts/3AB0B3_0_0.woff') format('woff'), url('../fonts/3AB0B3_0_0.ttf') format('truetype');
 }
+
 @font-face {
   font-family: 'Acrom-Regular';
   src: url('../fonts/3AB0B3_1_0.eot');
   src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
-
 }
 
 p, label, select, input {
@@ -18,11 +18,11 @@ p, label, select, input {
 }
 
 p {
-  font-size: 24px; 
+  font-size: 24px;
 }
 
 h1 {
-  font-size: 48px; 
+  font-size: 48px;
 }
 
 h1, button {
@@ -55,6 +55,7 @@ h1, button {
   margin: 5px;
   padding: 10px;
   border: none;
+  cursor: pointer;
 }
 
 .next-button {
@@ -72,10 +73,10 @@ h1, button {
   outline: 0
 }
 
-
 .next-button:focus {
   outline: 0
 }
+
 .prev-button {
   background-color: #1c1c1c;
   border: none;
@@ -85,10 +86,16 @@ h1, button {
 
 .button-container {
   position: fixed;
-  top: 60%;
+  top: 75%;
   left: 39%;
   display: flex;
   margin-top: 5%;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.firstSlide {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;

@@ -1,8 +1,5 @@
 import React from 'react';
-import { connect, useDispatch } from 'react-redux';
-
-
-import { saveValue } from './../redux/actions/input';
+import { useDispatch } from 'react-redux';
 import { decreaseStep, increaseStep } from '../redux/actions/steps';
 import { Slide0 } from './../components/slides/Slide0';
 import { Slide1 } from './../components/slides/Slide1';
@@ -48,7 +45,7 @@ export function StepsController(props) {
         case 0: {
             Slide = Slide0;
             ButtonContainer = () => (
-                <div className="">
+                <div className="firstSlide">
                     <Button onClick={nextStep} isNext={true}>Начать</Button>
                 </div>
             ); 
