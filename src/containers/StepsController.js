@@ -36,19 +36,10 @@ export function StepsController(props) {
 
     const { step } = props;
     let Slide;
-    let ButtonContainer = () => (
-        <div className="button-container">
-            <Button onClick={prevStep} isNext={false}>Назад</Button>
-            <Button onClick={nextStep} isNext={true}>Далее</Button>
-        </div>);
+    const slideProps = {nextStep, prevStep}; 
     switch (step) {
         case 0: {
             Slide = Slide0;
-            ButtonContainer = () => (
-                <div className="firstSlide">
-                    <Button onClick={nextStep} isNext={true}>Начать</Button>
-                </div>
-            ); 
             break;
         }
         case 1: {
@@ -106,8 +97,7 @@ export function StepsController(props) {
 
     return (
         <div className="slide-container">
-            <Slide />
-            <ButtonContainer />
+            <Slide {...slideProps}/>
         </div>
     );
 }

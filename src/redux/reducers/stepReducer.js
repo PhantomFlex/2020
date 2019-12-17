@@ -3,7 +3,10 @@ import { INCREASE_STEP_BY, DECREASE_STEP_BY, ADD_STEP_DATA, UPDATE_STEP_DATA, AD
 const initialState = {
     currentStepNumber: 0,
     maxSteps: 12,
-    stepsData: []
+    stepsData: [{
+        stepNumber: 1,
+        checboxValues: [false, false, false, false, false, false]
+    }]
 };
 
 export const stepReducer = (state = initialState, action) => {
@@ -22,28 +25,15 @@ export const stepReducer = (state = initialState, action) => {
                 currentStepNumber: state.currentStepNumber - action.decreaseBy
             }
         }
-        case ADD_STEP_INITIAL_DATA: {
-            const stepNumber = action.stepNumber; 
-            const initialData = action.initialData; 
-            if (!state.stepsData[stepNumber]) {
-                const newStepsData = state.stepsData; 
-                newStepsData[stepNumber] = initialData;
-                return {
-                    currentStepNumber: state.currentStepNumber,
-                    maxSteps: state.maxSteps, 
-                    stepsData: newStepsData
-                } 
-            }
-            else {
-                return state; 
-            }
-            
-        }
         case UPDATE_STEP_DATA: {
             const newData = action.stepData; 
-            const newStepsData = state.stepsData; 
-            newStepsData[action.stepNumber] = newData; 
-
+            const newStepsData = state.stepsData.map(el => {
+                if (el.stepNumber === action.stepNumber) {
+                    return newData; 
+                }
+                return el; 
+            }); 
+            
             return {
                 maxSteps: state.maxSteps, 
                 currentStepNumber: state.currentStepNumber,

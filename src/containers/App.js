@@ -17,4 +17,8 @@ export const App = () => {
     );
 }
 
+/**
+ * TODO:
+ * Refactor all slides to React class components, use connect
+ */
 

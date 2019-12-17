@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import './checkbox.css'; 
+import './checkbox.css';
 
-export function Checkbox(props) {
-  const [checked, setChecked] = useState(props.checked);
+export const Checkbox = (props) => {
+  const [checked, setChecked] = useState(props.checked); 
 
   const checkboxClicked = () => {
-    props.checkBoxClickedCallBack(props.index); 
+    setChecked(!checked); 
+    props.checkBoxClickedCallBack(props.index);
   }
 
   return (
-    <label className="container">{props.label}
+    <label className="container" > {props.label}
       <input type="checkbox" onChange={checkboxClicked} checked={checked} />
       <span className="checkmark"></span>
     </label>
-  )
+  );
+
+
 }
