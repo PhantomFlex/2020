@@ -24,6 +24,8 @@ export const Slide1 = ({prevStep, nextStep}) => {
   return (
     <React.Fragment>
       <div>
+      <h1>Приготовтесь:</h1>
+
         {checboxLabels.map((label, index) => {
           const checked = stepData ? stepData.checboxValues[index] : false;
           return <Checkbox label={label} key={index} checked={checked} index={index} checkBoxClickedCallBack={checkBoxClicked} />

@@ -11,18 +11,20 @@
   src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
 }
 
-p, label, select, input {
+p, label, select,input  {
   font-family: "Acrom-Regular";
   font-weight: normal;
   font-style: normal;
 }
 
 p {
-  font-size: 24px;
+  font-size: calc(0.5em + 0.5vw);
 }
 
 h1 {
-  font-size: 48px;
+  position: fixed;
+  font-size: calc(1em + 3vw);
+  top: 15%;
 }
 
 h1, button {
@@ -47,8 +49,8 @@ h1, button {
   position: fixed;
   width: 200px;
   height: 60.49px;
-  left: 4%;
-  top: 6%;
+  left: 10%;
+  top: 7%;
 }
 
 .next-button, .prev-button {
@@ -86,8 +88,8 @@ h1, button {
 
 .button-container {
   position: fixed;
-  top: 75%;
-  left: 39%;
+  bottom: 10%;
+  left: 7%;
   display: flex;
   margin-top: 5%;
   -webkit-user-select: none;
@@ -119,4 +121,20 @@ h1, button {
   margin: 25%;
   justify-content: flex-start;
   text-align: start;
+  width: 80%;
+}
+
+.inputFix{
+  width: 80px;
+  height: 40px;
+  background: #555555;
+  border-radius: 4px;
+  border: none;
+  font-size: 150%;
+  color: white;
+}
+
+.fourinputFix{
+  display: flex;
+  
 }
