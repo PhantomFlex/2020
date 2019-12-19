@@ -15,6 +15,7 @@ export class Slide1 extends React.Component {
     const { checkboxs } = this.state;
     return (
       <div>
+        <h1>Приготовтесь:</h1>
         {checkboxs.map((checkbox, index) => {
           return <Checkbox label={checkbox.label} index={index} checked={checkbox.checked} />
         })}
