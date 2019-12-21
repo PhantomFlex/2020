@@ -5,7 +5,7 @@ export const Checkbox = (props) => {
   const [checked, setChecked] = useState(props.checked); 
 
   const checkboxClicked = () => {
-    setChecked(!checked); 
+    //setChecked(!checked); 
     props.checkBoxClickedCallBack(props.index);
   }
 

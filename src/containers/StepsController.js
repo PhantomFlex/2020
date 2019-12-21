@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { decreaseStep, increaseStep } from '../redux/actions/steps';
 import { Slide0 } from './../components/slides/Slide0';
-import { Slide1 } from './../components/slides/Slide1';
+import Slide1 from './../components/slides/Slide1';
 import { Slide2 } from './../components/slides/Slide2';
 import { Slide3 } from './../components/slides/Slide3';
 import { Slide4 } from './../components/slides/Slide4';
@@ -14,8 +14,6 @@ import { Slide9 } from './../components/slides/Slide9';
 import { Slide10 } from '../components/slides/Slide10';
 import { Slide11 } from './../components/slides/Slide11';
 import { Slide12 } from './../components/slides/Slides12';
-
-import { Button } from './../components/Button';
 
 export function StepsController(props) {
 
@@ -36,7 +34,7 @@ export function StepsController(props) {
 
     const { step } = props;
     let Slide;
-    const slideProps = {nextStep, prevStep}; 
+    const slideProps = { nextStep, prevStep };
     switch (step) {
         case 0: {
             Slide = Slide0;
@@ -97,7 +95,7 @@ export function StepsController(props) {
 
     return (
         <div className="slide-container">
-            <Slide {...slideProps}/>
+            <Slide {...slideProps} />
         </div>
     );
 }

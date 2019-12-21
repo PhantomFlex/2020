@@ -1,13 +1,11 @@
 import React from 'react';
 import './App.css';
 import { StepsController } from './StepsController';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, connect } from 'react-redux';
 import { addStepData, updateStepData } from '../redux/actions/steps';
 
 
-export const App = () => {
-    const step = useSelector(state => state.steps.currentStepNumber);
-    const maxStep = useSelector(state => state.steps.maxSteps); 
+const App = ({step, maxStep}) => {
 
     return (
         <div className="App">
@@ -16,6 +14,13 @@ export const App = () => {
         </div>
     );
 }
+
+const mapStateToProps = state => ({
+    step: state.steps.currentStepNumber,
+    maxStep: state.steps.maxSteps
+})
+
+export default connect(mapStateToProps)(App); 
 
 /**
  * TODO:
