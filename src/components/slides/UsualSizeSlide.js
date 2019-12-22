@@ -13,12 +13,13 @@ export const UsualSizeSlide = ({nextStep, prevStep}) => {
         dispatch(updateStepData(STEP_NUMBER, newStepData));
     };
 
+    const showNextButton = () => stepData.inputValue !== "";
     return (
         <div>
             <h1>Размер,который Вы обычно носите:</h1>
             <p>Введите в любом удобном виде:</p>
             <input onChange={onChange} value={stepData.inputValue}/>
-            <ButtonContainer prevStep={prevStep} nextStep={nextStep} showNextButton={true} disableNextButton={false}/>
+            <ButtonContainer prevStep={prevStep} nextStep={nextStep} showNextButton={showNextButton()} disableNextButton={false}/>
         </div>
     )
 };

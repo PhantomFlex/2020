@@ -1,13 +1,11 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {nextStepAction, prevStepAction} from "../redux/actions/actions";
+import {nextStepAction, prevStepAction, finalStepAction, firstStepAction} from "../redux/actions/actions";
 import {WelcomeSlide} from '../components/slides/WelcomeSlide';
 import {GetReadySlide} from '../components/slides/GetReadySlide';
 import {UsualSizeSlide} from '../components/slides/UsualSizeSlide';
 import {QuestionSlide} from '../components/slides/QuestionSlide';
-import {Slide10} from '../components/slides/Slide10';
-import {Slide11} from './../components/slides/Slide11';
-import {Slide12} from './../components/slides/Slides12';
+import {FinalSlide} from '../components/slides/FinalSlide';
 import {MeasureSlide} from "../components/slides/MeasureSlide";
 
 export const StepsController = () => {
@@ -19,6 +17,14 @@ export const StepsController = () => {
 
     const prevStep = () => {
         dispatch(prevStepAction());
+    };
+
+    const finalStep = () => {
+        dispatch(finalStepAction());
+    };
+
+    const firstStep = () => {
+        dispatch(firstStepAction());
     };
 
     const step = useSelector(state => state.currentStep);
@@ -74,23 +80,28 @@ export const StepsController = () => {
         }
         case 8: {
             Slide = QuestionSlide;
+            slideProps.finalStep = finalStep;
             slideProps.questionText = "Обувь будет выше щиколотки?";
             break;
         }
         case 9: {
-            Slide = QuestionSlide;
+            Slide = MeasureSlide;
+            slideProps.url = "https://youtu.be/8TRAeznuMqg";
+            slideProps.title = "Мерка 6 - Обхват голени";
+            slideProps.text = "Отмерьте 17 см от пола на ноге. В этом месте измерьте длину окружности голени.";
             break;
         }
         case 10: {
-            Slide = Slide10;
+            Slide = MeasureSlide;
+            slideProps.url = "https://youtu.be/8TRAeznuMqg";
+            slideProps.title = "Мерка 7 - Обхват икры";
+            slideProps.text = "Если вы планируете носить штаны внутрь обуви, измеряйте икру вместе с штаниной. Измерьте длину окружности икры в самом широком месте. После, измерьте расстояние от пола до самого широкого места икры.";
+            slideProps.isFourInputs = true;
             break;
         }
         case 11: {
-            Slide = Slide11;
-            break;
-        }
-        case 12: {
-            Slide = Slide12;
+            Slide = FinalSlide;
+            slideProps.firstStep = firstStep;
             break;
         }
         default: {

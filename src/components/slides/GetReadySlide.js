@@ -22,7 +22,7 @@ export const GetReadySlide = ({nextStep, prevStep}) =>  {
         dispatch(updateStepData(STEP_NUMBER, {...stepData, checkBoxValues: checkboxes}));
     };
 
-    const disableNextButton = !stepData.checkBoxValues.every(value => value);
+    const showNextButton = stepData.checkBoxValues.every(value => value);
 
     return (
       <React.Fragment>
@@ -37,7 +37,7 @@ export const GetReadySlide = ({nextStep, prevStep}) =>  {
             />
           ))}
         </div>
-        <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={disableNextButton} showNextButton={true}/>
+        <ButtonContainer prevStep={prevStep} nextStep={nextStep} showNextButton={showNextButton}/>
       </React.Fragment>
     );
 };

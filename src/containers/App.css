@@ -143,3 +143,8 @@ h1, button {
 .measureText {
     margin-top: 10%;
 }
+
+.resultTextArea {
+    height: 200px;
+    user-select: none;
+}

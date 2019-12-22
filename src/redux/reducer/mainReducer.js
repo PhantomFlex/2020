@@ -1,4 +1,4 @@
-import {NEXT_STEP, PREV_STEP, UPDATE_STEP_DATA} from "../actions/actions";
+import {NEXT_STEP, PREV_STEP, UPDATE_STEP_DATA, FINAL_STEP, FIRST_STEP} from "../actions/actions";
 
 const initialState = {
     currentStep: 0,
@@ -14,30 +14,45 @@ const initialState = {
         },
         {
             stepNumber: 3,
-            firstInputValue: "",
-            secondInputValue: ""
+            inputNumber1: "",
+            inputNumber2: "",
         },
         {
             stepNumber: 4,
-            firstInputValue: "",
-            secondInputValue: ""
+            inputNumber1: "",
+            inputNumber2: "",
         },
         {
             stepNumber: 5,
-            firstInputValue: "",
-            secondInputValue: ""
+            inputNumber1: "",
+            inputNumber2: "",
         },
         {
             stepNumber: 6,
-            firstInputValue: "",
-            secondInputValue: ""
+            inputNumber1: "",
+            inputNumber2: "",
         },
         {
             stepNumber: 7,
-            firstInputValue: "",
-            secondInputValue: ""
+            inputNumber1: "",
+            inputNumber2: "",
+        },
+        {
+            stepNumber: 8,
+            answer: false
+        },
+        {
+            stepNumber: 9,
+            inputNumber1: "",
+            inputNumber2: "",
+        },
+        {
+            stepNumber: 10,
+            inputNumber1: "",
+            inputNumber2: "",
+            inputNumber3: "",
+            inputNumber4: "",
         }
-
     ]
 };
 
@@ -53,6 +68,13 @@ export const mainReducer = (state = initialState, action) => {
             return state;
         }
         case PREV_STEP: {
+            const answer = state.stepsData[7].answer;
+            if (!answer && state.currentStep === 11) {
+                return {
+                    ...state,
+                    currentStep: 8
+                }
+            }
             if (state.currentStep > 0) {
                 return {
                     ...state,
@@ -65,6 +87,18 @@ export const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 stepsData: state.stepsData.map(stepData => stepData.stepNumber === action.stepNumber ? action.stepData : stepData)
+            }
+        }
+        case FINAL_STEP: {
+            return {
+                ...state,
+                currentStep: 11
+            }
+        }
+        case FIRST_STEP: {
+            return {
+                ...state,
+                currentStep: 0
             }
         }
         default: {
