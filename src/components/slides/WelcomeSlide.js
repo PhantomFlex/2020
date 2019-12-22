@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from './../Button';
 
-export const Slide0 = ({nextStep}) => {
+export const WelcomeSlide = ({nextStep}) => {
     return (
         <React.Fragment>
             <div>

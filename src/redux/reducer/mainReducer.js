@@ -6,11 +6,36 @@ const initialState = {
     stepsData: [
         {
             stepNumber: 1,
-            checkBoxValues: [true, false, true, false, false, false]
+            checkBoxValues: [false, false, false, false, false, false]
         },
         {
             stepNumber: 2,
             inputValue: ""
+        },
+        {
+            stepNumber: 3,
+            firstInputValue: "",
+            secondInputValue: ""
+        },
+        {
+            stepNumber: 4,
+            firstInputValue: "",
+            secondInputValue: ""
+        },
+        {
+            stepNumber: 5,
+            firstInputValue: "",
+            secondInputValue: ""
+        },
+        {
+            stepNumber: 6,
+            firstInputValue: "",
+            secondInputValue: ""
+        },
+        {
+            stepNumber: 7,
+            firstInputValue: "",
+            secondInputValue: ""
         }
 
     ]

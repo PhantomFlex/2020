@@ -4,7 +4,7 @@ import {updateStepData} from "../../redux/actions/actions";
 import {ButtonContainer} from "../ButtonContainer/ButtonContainer";
 
 const STEP_NUMBER = 2;
-export const Slide2 = ({nextStep, prevStep}) => {
+export const UsualSizeSlide = ({nextStep, prevStep}) => {
     const stepData = useSelector(state => state.stepsData.filter(stepData => stepData.stepNumber === STEP_NUMBER)[0]);
     const dispatch = useDispatch();
     const onChange = (e) => {

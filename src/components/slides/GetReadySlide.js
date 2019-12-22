@@ -12,7 +12,7 @@ const checkboxLabels = [
 ];
 
 const STEP_NUMBER = 1;
-export const Slide1 = ({nextStep, prevStep}) =>  {
+export const GetReadySlide = ({nextStep, prevStep}) =>  {
     const stepData = useSelector(state => state.stepsData.filter(stepData => stepData.stepNumber === STEP_NUMBER)[0]);
     const dispatch = useDispatch();
 
@@ -37,7 +37,7 @@ export const Slide1 = ({nextStep, prevStep}) =>  {
             />
           ))}
         </div>
-        <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={disableNextButton} />
+        <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={disableNextButton} showNextButton={true}/>
       </React.Fragment>
     );
 };

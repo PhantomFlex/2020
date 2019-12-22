@@ -1,140 +1,145 @@
 @import url("//hello.myfonts.net/count/3ab0b3");
+
 @font-face {
-  font-family: 'Acrom-Bold';
-  src: url('../fonts/3AB0B3_0_0.eot');
-  src: url('../fonts/3AB0B3_0_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_0_0.woff2') format('woff2'), url('../fonts/3AB0B3_0_0.woff') format('woff'), url('../fonts/3AB0B3_0_0.ttf') format('truetype');
+    font-family: 'Acrom-Bold';
+    src: url('../fonts/3AB0B3_0_0.eot');
+    src: url('../fonts/3AB0B3_0_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_0_0.woff2') format('woff2'), url('../fonts/3AB0B3_0_0.woff') format('woff'), url('../fonts/3AB0B3_0_0.ttf') format('truetype');
 }
 
 @font-face {
-  font-family: 'Acrom-Regular';
-  src: url('../fonts/3AB0B3_1_0.eot');
-  src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
+    font-family: 'Acrom-Regular';
+    src: url('../fonts/3AB0B3_1_0.eot');
+    src: url('../fonts/3AB0B3_1_0.eot?#iefix') format('embedded-opentype'), url('../fonts/3AB0B3_1_0.woff2') format('woff2'), url('../fonts/3AB0B3_1_0.woff') format('woff'), url('../fonts/3AB0B3_1_0.ttf') format('truetype');
 }
 
-p, label, select,input  {
-  font-family: "Acrom-Regular";
-  font-weight: normal;
-  font-style: normal;
+p, label, select, input {
+    font-family: "Acrom-Regular";
+    font-weight: normal;
+    font-style: normal;
 }
 
 p {
-  font-size: calc(0.5em + 0.5vw);
+    font-size: calc(0.5em + 0.5vw);
 }
 
 h1 {
-  position: fixed;
-  font-size: calc(1em + 3vw);
-  top: 15%;
+    position: fixed;
+    font-size: calc(1em + 3vw);
+    top: 15%;
 }
 
 h1, button {
-  font-family: "Acrom-Bold";
-  font-weight: normal;
-  font-style: normal;
+    font-family: "Acrom-Bold";
+    font-weight: normal;
+    font-style: normal;
 }
 
 .App {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  flex-direction: column;
-  height: 100vh;
-  background: #1C1C1C;
-  color: #FFFFFF;
-  overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    height: 100vh;
+    background: #1C1C1C;
+    color: #FFFFFF;
+    overflow: hidden;
 }
 
 .logo {
-  position: fixed;
-  width: 200px;
-  height: 60.49px;
-  left: 10%;
-  top: 7%;
+    position: fixed;
+    width: 200px;
+    height: 60.49px;
+    left: 10%;
+    top: 7%;
 }
 
 .next-button, .prev-button {
-  margin: 5px;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
 }
 
 .next-button {
-  background-color: #fff;
-  color: black;
-  border-radius: 7%;
-  padding: 10px 15px 10px 15px;
+    background-color: #fff;
+    color: black;
+    border-radius: 7%;
+    padding: 10px 15px 10px 15px;
 }
 
 .prev-button:focus {
-  outline: 0
+    outline: 0
 }
 
 .prev-button:focus {
-  outline: 0
+    outline: 0
 }
 
 .next-button:focus {
-  outline: 0
+    outline: 0
 }
 
 .prev-button {
-  background-color: #1c1c1c;
-  border: none;
-  padding-left: 5px;
-  color: white;
+    background-color: #1c1c1c;
+    border: none;
+    padding-left: 5px;
+    color: white;
 }
 
 .button-container {
-  position: fixed;
-  bottom: 10%;
-  left: 7%;
-  display: flex;
-  margin-top: 5%;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+    position: fixed;
+    bottom: 10%;
+    left: 7%;
+    display: flex;
+    margin-top: 5%;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .firstSlide {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
-.slide>h1 {
-  font-size: 25pt;
+.slide > h1 {
+    font-size: 25pt;
 }
 
-.slide>p {
-  font-weight: 100;
+.slide > p {
+    font-weight: 100;
 }
 
 .slide {
-  margin-bottom: 10%;
+    margin-bottom: 10%;
 }
 
 .slide-container {
-  display: flex;
-  flex-direction: column;
-  margin: 25%;
-  justify-content: flex-start;
-  text-align: start;
-  width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 25%;
+    justify-content: flex-start;
+    text-align: start;
+    width: 80%;
 }
 
-.inputFix{
-  width: 80px;
-  height: 40px;
-  background: #555555;
-  border-radius: 4px;
-  border: none;
-  font-size: 150%;
-  color: white;
+.inputFix {
+    width: 80px;
+    height: 40px;
+    background: #555555;
+    border-radius: 4px;
+    border: none;
+    font-size: 150%;
+    color: white;
 }
 
-.fourinputFix{
-  display: flex;
-  
+.fourinputFix {
+    display: flex;
+
+}
+
+.measureText {
+    margin-top: 10%;
 }
