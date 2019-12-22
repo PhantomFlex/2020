@@ -18,7 +18,7 @@ export const UsualSizeSlide = ({nextStep, prevStep}) => {
             <h1>Размер,который Вы обычно носите:</h1>
             <p>Введите в любом удобном виде:</p>
             <input onChange={onChange} value={stepData.inputValue}/>
-            <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={false}/>
+            <ButtonContainer prevStep={prevStep} nextStep={nextStep} showNextButton={true} disableNextButton={false}/>
         </div>
     )
 };
