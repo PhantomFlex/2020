@@ -1,13 +1,24 @@
 import React from 'react';
-import { Select } from './../Select';
-export function Slide2() {
-    const options = [1, 2, 3, 4, 5];
-    const regions = ['EU', 'UA'];
+import {useSelector, useDispatch} from "react-redux";
+import {updateStepData} from "../../redux/actions/actions";
+import {ButtonContainer} from "../ButtonContainer/ButtonContainer";
+
+const STEP_NUMBER = 2;
+export const Slide2 = ({nextStep, prevStep}) => {
+    const stepData = useSelector(state => state.stepsData.filter(stepData => stepData.stepNumber === STEP_NUMBER)[0]);
+    const dispatch = useDispatch();
+    const onChange = (e) => {
+        const newStepData = {...stepData};
+        newStepData.inputValue = e.target.value;
+        dispatch(updateStepData(STEP_NUMBER, newStepData));
+    };
+
     return (
-        <div className="slide">
-            <h1>Размер, который вы обычно носите</h1>
-            <Select dat={options} />
-            <Select dat={regions} />
+        <div>
+            <h1>Размер,который Вы обычно носите:</h1>
+            <p>Введите в любом удобном виде:</p>
+            <input onChange={onChange} value={stepData.inputValue}/>
+            <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={false}/>
         </div>
     )
-}
+};

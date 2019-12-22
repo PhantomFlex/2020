@@ -1,58 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from "react-redux";
+import { updateStepData } from "../../redux/actions/actions";
 import { Checkbox } from './../Checkbox';
 import { ButtonContainer } from './../ButtonContainer/ButtonContainer';
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { updateStepData, setChecked } from './../../redux/actions/steps';
 
-
-const checboxLabels = [
+const checkboxLabels = [
   "Лист А4", "Ручка или Карандаш",
   "Мягкий метр или линейка", "Два любых небольших предмета",
   "Стелька из обуви,в которой Вам удобно (необязательно)",
   "Я в носках, в которых буду ходить в обуви"
 ];
 
-class Slide1 extends React.Component {
-  constructor() {
-    super();
-  }
+const STEP_NUMBER = 1;
+export const Slide1 = ({nextStep, prevStep}) =>  {
+    const stepData = useSelector(state => state.stepsData.filter(stepData => stepData.stepNumber === STEP_NUMBER)[0]);
+    const dispatch = useDispatch();
 
-  checkBoxClicked = checkboxIndex => {
-    const { stepData, dispatch, checked } = this.props;
-    //stepData.checboxValues = stepData.checboxValues.map((value, index) => index === checkboxIndex ? !value : value); 
-    //dispatch(updateStepData(1, new Object(stepData)));
-    dispatch(setChecked(!checked));
-  }
+    const checkBoxClicked = checkBoxIndex => {
+        const checkboxes = [...stepData.checkBoxValues];
+        checkboxes[checkBoxIndex] = !checkboxes[checkBoxIndex];
+        dispatch(updateStepData(STEP_NUMBER, {...stepData, checkBoxValues: checkboxes}));
+    };
 
-  shouldComponentUpdate() {
+    const disableNextButton = !stepData.checkBoxValues.every(value => value);
 
-  }
-
-  render() {
-    const { stepData, prevStep, nextStep, checked } = this.props;
-
-    let countChecked = 0;
-    stepData.checboxValues.forEach(checkbox => {
-      countChecked = checkbox ? ++countChecked : countChecked;
-    });
-    const disabledNextButton = countChecked === 6 ? false : true;
     return (
       <React.Fragment>
         <div>
-          <h1>Приготовбтесь</h1>
-          {checboxLabels.map((label, index) => {
-            //const checked = stepData ? stepData.checboxValues[index] : false;
-            return <Checkbox label={label} key={index} checked={checked} index={index} checkBoxClickedCallBack={this.checkBoxClicked} />
-          })}
+          <h1>Приготовьтесь</h1>
+          {checkboxLabels.map((label, index) => (
+             <Checkbox label={label}
+                             key={index}
+                             checked={stepData.checkBoxValues[index]}
+                             index={index}
+                             checkBoxClickedCallBack={checkBoxClicked}
+            />
+          ))}
         </div>
-        <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={disabledNextButton} />
+        <ButtonContainer prevStep={prevStep} nextStep={nextStep} disableNextButton={disableNextButton} />
       </React.Fragment>
-    )
-  }
-}
-const mapStateToProps = state => ({
-  stepData: state.steps.stepsData.filter(el => el.stepNumber === 1)[0],
-  checked: state.steps.checkbox
-});
+    );
+};
 
-export default connect(mapStateToProps)(Slide1);
+

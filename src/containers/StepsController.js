@@ -1,8 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { decreaseStep, increaseStep } from '../redux/actions/steps';
+import { useSelector, useDispatch } from 'react-redux';
+import { nextStepAction, prevStepAction } from "../redux/actions/actions";
 import { Slide0 } from './../components/slides/Slide0';
-import Slide1 from './../components/slides/Slide1';
+import { Slide1 } from './../components/slides/Slide1';
 import { Slide2 } from './../components/slides/Slide2';
 import { Slide3 } from './../components/slides/Slide3';
 import { Slide4 } from './../components/slides/Slide4';
@@ -14,27 +14,23 @@ import { Slide9 } from './../components/slides/Slide9';
 import { Slide10 } from '../components/slides/Slide10';
 import { Slide11 } from './../components/slides/Slide11';
 import { Slide12 } from './../components/slides/Slides12';
+import { MeasureSlide } from "../components/MeasureSlide/MeasureSlide";
 
-export function StepsController(props) {
-
+export const StepsController = () => {
     const dispatch = useDispatch();
-    function nextStep() {
-        const { step, maxStep } = props;
-        if (step < maxStep) {
-            dispatch(increaseStep(1));
-        }
-    }
 
-    function prevStep() {
-        const { step } = props;
-        if (step > 0) {
-            dispatch(decreaseStep(1));
-        }
-    }
+    const nextStep = () => {
+        dispatch(nextStepAction());
+    };
 
-    const { step } = props;
+    const prevStep = () => {
+        dispatch(prevStepAction());
+    };
+
+    const step = useSelector(state => state.currentStep);
     let Slide;
-    const slideProps = { nextStep, prevStep };
+
+    const slideProps = {nextStep, prevStep };
     switch (step) {
         case 0: {
             Slide = Slide0;
@@ -49,23 +45,23 @@ export function StepsController(props) {
             break;
         }
         case 3: {
-            Slide = Slide3;
+            Slide = MeasureSlide;
             break;
         }
         case 4: {
-            Slide = Slide4;
+            Slide = MeasureSlide;
             break;
         }
         case 5: {
-            Slide = Slide5;
+            Slide = MeasureSlide;
             break;
         }
         case 6: {
-            Slide = Slide6;
+            Slide = MeasureSlide;
             break;
         }
         case 7: {
-            Slide = Slide7;
+            Slide = MeasureSlide;
             break;
         }
         case 8: {
