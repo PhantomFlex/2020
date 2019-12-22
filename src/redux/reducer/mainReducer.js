@@ -68,6 +68,13 @@ export const mainReducer = (state = initialState, action) => {
             return state;
         }
         case PREV_STEP: {
+            const answer = state.stepsData[7].answer;
+            if (!answer && state.currentStep === 11) {
+                return {
+                    ...state,
+                    currentStep: 8
+                }
+            }
             if (state.currentStep > 0) {
                 return {
                     ...state,

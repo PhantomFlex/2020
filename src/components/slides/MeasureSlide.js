@@ -29,7 +29,7 @@ export const MeasureSlide = ({prevStep, nextStep, title, text, url, stepNumber, 
             <p className="measureText">{text}</p>
             <iframe title="title" className='video' src={url}/>
             <p>Левая окруж:</p>
-            <input id="inputNumber1" className='inputFix' value={stepData.inputNumber1} onChange={onChange}/>
+            <input  id="inputNumber1" className='inputFix' value={stepData.inputNumber1} onChange={onChange}/>
             <p>Левая от пола:</p>
             <input id="inputNumber2" className='inputFix' value={stepData.inputNumber2} onChange={onChange}/>
             {isFourInputs && (
